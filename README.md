@@ -24,8 +24,15 @@ For now, there's only the version for the LilyGo T-Embed CC1101; the other versi
 5- You can now download the .bin file located in the released GitHub repository.
 
 6- Once you have the COM port that belongs to your device and the .bin file, we can flash it with esptool. To do this, follow these steps :
-  Go to your downloads folder and right-click on the .bin file, then select Properties. Copy the file's location, for example: C:\Users\you\Downloads
-  Open a command prompt as administrator and paste what you copied earlier and add `cd` before, for example : `cd C:\Users\you\Downloads`
-  `python -m esptool --chip esp32s3 --port COM3 write_flash -z 0x0 "the path to your .bin file"`
+  Go to your downloads folder and right-click on the .bin file, then select Properties. Copy the file's location, for example: C:\Users\exemple\Downloads
+  Open a command prompt as administrator and paste what you copied earlier and add `cd` before, for example : `cd C:\Users\exemple\Downloads`
+  Once you are in the directory containing the .bin file, you must now enter the following : `python -m esptool --chip esp32s3 --port COM3 write_flash -z 0x0 "the name of the .bin file"`
   (Replace `COM3` with the COM number of your device if it is different.)
-  (Between the "quotation marks" you must indicate where your file is located; Paste what you copied earlier, for example: C:\Users\you\Downloads\
+  (Between the "quotation marks" you must indicate the name of the .bin file, exemple : "Bruce-lilygo-t-embed-cc1101.bin"
+
+  The flash should normally start; do not unplug your device, keep it firmly in place without touching it until it finishes.
+  Once you see the message: "Hard resetting via RTS pin..." you can unplug your device, turn it on and the firmware should be flashed correctly.
+
+So on this .bin file I removed the 20-second limit and put a 99999999999 second limit in its place.
+
+IMPORTANT ! If you have any problems, you can contact me on Discord: `mokapi47` via private message so I can help you.
