@@ -26,7 +26,7 @@ For now, there's only the version for the LilyGo T-Embed CC1101; the other versi
 6- Once you have the COM port that belongs to your device and the .bin file, we can flash it with esptool. To do this, follow these steps :
   Go to your downloads folder and right-click on the .bin file, then select Properties. Copy the file's location, for example: C:\Users\exemple\Downloads
   Open a command prompt as administrator and paste what you copied earlier and add `cd` before, for example : `cd C:\Users\exemple\Downloads`
-  Once you are in the directory containing the .bin file, you must now enter the following : `python -m esptool --chip esp32s3 --port COM3 write_flash -z 0x0 "the name of the .bin file"`
+  Once you are in the directory containing the .bin file, you must now enter the following : `python -m esptool --chip esp32s3 --port COM3 write-flash -z 0x0 "the name of the .bin file"`
   (Replace `COM3` with the COM number of your device if it is different.)
   (Between the "quotation marks" you must indicate the name of the .bin file, exemple : "Bruce-lilygo-t-embed-cc1101.bin"
 
